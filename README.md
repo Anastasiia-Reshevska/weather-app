@@ -27,4 +27,10 @@ npm test -- --watch=false
 npm run build
 ```
 
+To automatically fix the order of SCSS properties, run:
+
+```bash
+npm run lint:styles:fix
+```
+
 The ready-to-use build is stored in `dist/weather-app/`.

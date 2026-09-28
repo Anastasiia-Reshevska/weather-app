@@ -5,7 +5,6 @@ import { WeatherSearch } from './weather-search/weather-search';
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, WeatherSearch],
-  templateUrl: './app.html',
-  styleUrl: './app.scss'
+  templateUrl: './app.html'
 })
 export class App {}
