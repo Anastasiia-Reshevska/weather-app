@@ -1,6 +1,6 @@
 import { Injectable, OnDestroy } from '@angular/core';
-import type { CityOption } from './city-types';
-import type { CurrentWeather } from './weather-types';
+import type { CityOption } from '../models/city-types';
+import type { CurrentWeather } from '../models/weather-types';
 
 const CACHE_TTL_MS = 10 * 60 * 1000;
 const CITY_CACHE_KEY = 'weather-app:city-cache:v1';
@@ -30,6 +30,8 @@ function isCurrentWeather(value: unknown): value is CurrentWeather {
     && typeof value['location'] === 'string'
     && typeof value['temperature'] === 'number'
     && typeof value['condition'] === 'string'
+    && (typeof value['weatherId'] === 'number' || value['weatherId'] === null)
+    && typeof value['isNight'] === 'boolean'
     && typeof value['humidity'] === 'number'
     && typeof value['windSpeed'] === 'number';
 }

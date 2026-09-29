@@ -1,0 +1,94 @@
+.weather {
+  &__result {
+    margin-top: 12px;
+    padding: 20px;
+
+    border: 1px solid var(--palette-border-color);
+    border-radius: 16px;
+
+    background: #eff6ff;
+
+    &--clear {
+      background: #fff7df;
+      border-color: #f3d889;
+    }
+
+    &--clear-night {
+      background: #edf0fc;
+      border-color: #b9c5e5;
+    }
+
+    &--clouds {
+      background: #f0f5fa;
+      border-color: #c5d7e8;
+    }
+
+    &--drizzle {
+      background: #edf8fd;
+      border-color: #b8d7e9;
+    }
+
+    &--rain {
+      background: #e8f2fd;
+      border-color: #a9c8ea;
+    }
+
+    &--snow {
+      background: #f2faff;
+      border-color: #c3dfeb;
+    }
+
+    &--mist {
+      background: #f3f6f8;
+      border-color: #d1dae2;
+    }
+
+    &--thunderstorm {
+      background: #e8eefb;
+      border-color: #aebfdf;
+    }
+
+    &--tornado {
+      background: #e8edf2;
+      border-color: #aab9c8;
+    }
+  }
+
+  &__city {
+    margin: 0;
+
+    font-size: 20px;
+  }
+
+  &__temperature {
+    margin: 12px 0 0;
+
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  &__condition {
+    margin: 8px 0 0;
+
+    color: #475569;
+  }
+
+  &__details {
+    display: grid;
+    gap: 16px;
+
+    margin: 24px 0 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      dd {
+        margin-left: 0;
+      }
+    }
+  }
+}

@@ -1,8 +1,8 @@
 import { Component, signal } from '@angular/core';
 import { WeatherError } from '../weather-error/weather-error';
 import { WeatherForm } from '../weather-form/weather-form';
-import type { CurrentWeather } from '../../services/weather-types';
-import { WeatherSearch } from '../weather-search/weather-search';
+import type { CurrentWeather } from '../../models/weather-types';
+import { WeatherSearch } from '../weather-details/weather-details';
 
 @Component({
   selector: 'app-weather-wrapper',

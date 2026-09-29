@@ -1,37 +1,12 @@
 import { Injectable } from '@angular/core';
 import axios from 'axios';
-import type { CityOption } from './city-types';
-import type { CurrentWeather } from './weather-types';
+import type { ApiConfig } from '../models/api-config';
+import type { CityOption } from '../models/city-types';
+import type { PhotonResponse } from '../models/photon-response';
+import type { WeatherResponse } from '../models/weather-response';
+import type { CurrentWeather } from '../models/weather-types';
 
-const REQUEST_TIMEOUT_MS = 10_000;
-
-interface PhotonResponse {
-  features: Array<{
-    properties: {
-      osm_id: number;
-      osm_type: string;
-      name?: string;
-      state?: string;
-      country?: string;
-    };
-    geometry: { coordinates: [number, number] };
-  }>;
-}
-
-interface WeatherResponse {
-  weather: Array<{ description: string }>;
-  main: {
-    temp: number;
-    humidity: number;
-  };
-  wind: { speed: number };
-}
-
-interface ApiConfig {
-  apiKey: string;
-  geocodingUrl: string;
-  weatherUrl: string;
-}
+const REQUEST_TIMEOUT_MS = 10000;
 
 @Injectable({ providedIn: 'root' })
 export class ApiRequestsService {
@@ -127,6 +102,8 @@ export class ApiRequestsService {
       location: city.label,
       temperature: Math.round(current.main.temp),
       condition: description.charAt(0).toUpperCase() + description.slice(1),
+      weatherId: current.weather[0]?.id ?? null,
+      isNight: current.weather[0]?.icon?.endsWith('n') ?? false,
       humidity: Math.round(current.main.humidity),
       windSpeed: Math.round(current.wind.speed * 3.6),
     };

@@ -1,8 +1,8 @@
 import { inject, Injectable } from '@angular/core';
 import { ApiRequestsService } from './api-requests';
 import { CacheService } from './cache';
-import type { CityOption } from './city-types';
-import type { CurrentWeather } from './weather-types';
+import type { CityOption } from '../models/city-types';
+import type { CurrentWeather } from '../models/weather-types';
 
 @Injectable({ providedIn: 'root' })
 export class WeatherRepository {

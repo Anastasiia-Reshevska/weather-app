@@ -2,11 +2,11 @@ import { Component, inject, OnDestroy, output, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { WeatherSubmitButton } from '../weather-submit-button/weather-submit-button';
 import { WeatherRepository } from '../../services/weather-repository';
-import type { CityOption } from '../../services/city-types';
-import type { CurrentWeather } from '../../services/weather-types';
+import type { CityOption } from '../../models/city-types';
+import type { CurrentWeather } from '../../models/weather-types';
 
 const MIN_CITY_QUERY_LENGTH = 3;
-const CITY_SEARCH_DELAY_MS = 2000;
+const CITY_SEARCH_DELAY_MS = 1000;
 
 @Component({
   selector: 'app-weather-form',

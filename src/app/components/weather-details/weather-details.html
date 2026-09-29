@@ -1,6 +1,7 @@
 @if (weather(); as current) {
-  <div class="weather__result" aria-live="polite">
+  <div [class]="resultClass()" aria-live="polite">
     <h2 class="weather__city">{{ current.location }}</h2>
+    <app-weather-condition-icon [weatherId]="current.weatherId" [isNight]="current.isNight" />
     <p class="weather__temperature">{{ current.temperature }}°C</p>
     <p class="weather__condition">{{ current.condition }}</p>
 
