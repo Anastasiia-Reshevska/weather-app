@@ -8,6 +8,6 @@
       (weatherChange)="weather.set($event)"
       (errorChange)="errorMessage.set($event)"
     />
-    <app-weather-details[weather]="weather()" />
+    <app-weather-details [weather]="weather()" />
   </div>
 </section>
