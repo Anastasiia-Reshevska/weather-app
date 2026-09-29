@@ -1,5 +1,6 @@
-@use 'variables' as vars;
+@use 'palette';
+@use 'startup-error';
 
 body {
-  font-family: Roboto, sans-serif;
+  font-family: var(--palette-font-family);
 }

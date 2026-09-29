@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { WeatherSearch } from './weather-search/weather-search';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, WeatherSearch],
+  imports: [RouterOutlet],
   templateUrl: './app.html'
 })
 export class App {}

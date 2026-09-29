@@ -1,0 +1,18 @@
+@if (weather(); as current) {
+  <div class="weather__result" aria-live="polite">
+    <h2 class="weather__city">{{ current.location }}</h2>
+    <p class="weather__temperature">{{ current.temperature }}°C</p>
+    <p class="weather__condition">{{ current.condition }}</p>
+
+    <dl class="weather__details">
+      <div>
+        <dt>Humidity</dt>
+        <dd>{{ current.humidity }}%</dd>
+      </div>
+      <div>
+        <dt>Wind speed</dt>
+        <dd>{{ current.windSpeed }} km/h</dd>
+      </div>
+    </dl>
+  </div>
+}
