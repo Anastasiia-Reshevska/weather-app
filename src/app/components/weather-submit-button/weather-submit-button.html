@@ -1,0 +1,3 @@
+<button type="button" [disabled]="disabled()" (click)="clicked.emit()">
+  {{ loading() ? 'Loading weather...' : 'Show weather' }}
+</button>

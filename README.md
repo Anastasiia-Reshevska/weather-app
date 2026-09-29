@@ -16,15 +16,22 @@ Node.js and npm are required. Run the following in the project root:
 
 ```bash
 npm ci
+cp .env.example .env
 npm start
 ```
 
+Set `OPENWEATHER_API_KEY` in `.env` to your OpenWeatherMap key before starting the app. `.env` and the generated `public/weather-config.json`.
 
 ## Audit
 
 ```bash
-npm test -- --watch=false
 npm run build
+```
+
+To automatically fix the order of SCSS properties, run:
+
+```bash
+npm run lint:styles:fix
 ```
 
 The ready-to-use build is stored in `dist/weather-app/`.

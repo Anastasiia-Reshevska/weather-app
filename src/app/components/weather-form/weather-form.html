@@ -1,0 +1,38 @@
+<form class="weather__form" (ngSubmit)="showWeather()">
+  <label for="city">City</label>
+  <div class="weather__search-field">
+    <input
+      id="city"
+      name="city"
+      type="search"
+      placeholder="Enter a city name"
+      autocomplete="off"
+      [ngModel]="cityQuery"
+      (ngModelChange)="onQueryChange($event)"
+      [disabled]="isLoadingWeather()"
+      minlength="3"
+    />
+    @if (cities().length > 0 || citySearchMessage() || isSearchingCities()) {
+      <div class="weather__suggestions" role="group" aria-label="Matching cities">
+        @if (isSearchingCities() || citySearchMessage()) {
+          <p class="weather__suggestions-message" role="status">
+            {{ isSearchingCities() ? 'Searching cities...' : citySearchMessage() }}
+          </p>
+        }
+        @for (city of cities(); track city.id) {
+          <button class="weather__suggestion" type="button" (click)="selectCity(city)">
+            <span class="weather__suggestion-name">{{ city.name }}</span>
+            @if (city.details) {
+              <span class="weather__suggestion-details">{{ city.details }}</span>
+            }
+          </button>
+        }
+      </div>
+    }
+  </div>
+  <app-weather-submit-button
+    [disabled]="!selectedCity() || isLoadingWeather()"
+    [loading]="isLoadingWeather()"
+    (clicked)="showWeather()"
+  />
+</form>

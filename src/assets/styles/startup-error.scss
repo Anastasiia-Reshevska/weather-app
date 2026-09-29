@@ -1,0 +1,18 @@
+@use 'variables' as *;
+
+.startup-error {
+  max-width: 440px;
+  margin: 100px 20px 0;
+  padding: 15px 10px;
+
+  border: 1px solid var(--palette-error-border);
+  border-radius: 16px;
+
+  color: var(--palette-error-text);
+  background: var(--palette-error-bg);
+
+  @media screen and (min-width: $xs-up) {
+    margin: 100px auto 0;
+    padding: 24px;
+  }
+}

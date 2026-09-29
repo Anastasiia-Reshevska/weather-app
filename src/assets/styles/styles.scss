@@ -1,0 +1,6 @@
+@use 'palette';
+@use 'startup-error';
+
+body {
+  font-family: var(--palette-font-family);
+}

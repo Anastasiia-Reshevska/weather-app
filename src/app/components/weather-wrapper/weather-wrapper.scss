@@ -1,0 +1,38 @@
+@use 'variables' as *;
+
+.weather {
+  padding: 0 10px;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    max-width: 440px;
+    margin: 100px auto 0;
+    padding: 25px;
+
+    border: 1px solid var(--palette-border-color);
+    border-radius: 24px;
+
+    color: var(--palette-text-main);
+    background: rgb(255 255 255 / 88%);
+    box-shadow: 0 20px 60px rgb(37 99 135 / 12%);
+
+    @media screen and (min-width: $md-up) {
+      padding: 30px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 16px;
+
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+
+    @media screen and (min-width: $md-up) {
+      font-size: 24px;
+    }
+  }
+}

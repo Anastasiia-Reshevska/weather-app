@@ -23,6 +23,9 @@
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/assets/styles"]
+            },
             "assets": [
               {
                 "glob": "**/*",
@@ -30,7 +33,8 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "node_modules/normalize.css/normalize.css",
+              "src/assets/styles/styles.scss"
             ]
           },
           "configurations": {
@@ -68,9 +72,6 @@
             }
           },
           "defaultConfiguration": "development"
-        },
-        "test": {
-          "builder": "@angular/build:unit-test"
         }
       }
     }

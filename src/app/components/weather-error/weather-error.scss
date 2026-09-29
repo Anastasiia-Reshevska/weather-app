@@ -1,0 +1,10 @@
+.weather-error {
+  margin: 8px 0 0;
+  padding: 8px 10px;
+
+  border: 1px solid var(--palette-error-border);
+  border-radius: 7px;
+
+  color: var(--palette-error-text);
+  background: var(--palette-error-bg);
+}
