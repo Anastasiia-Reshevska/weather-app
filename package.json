@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "prepare:env": "node --env-file=.env scripts/generate-weather-config.mjs",
+    "prepare:env": "node scripts/generate-weather-config.mjs",
     "prestart": "npm run prepare:env",
     "start": "ng serve",
     "prebuild": "npm run prepare:env",

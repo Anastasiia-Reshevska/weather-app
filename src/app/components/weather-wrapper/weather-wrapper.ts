@@ -2,11 +2,11 @@ import { Component, signal } from '@angular/core';
 import { WeatherError } from '../weather-error/weather-error';
 import { WeatherForm } from '../weather-form/weather-form';
 import type { CurrentWeather } from '../../models/weather-types';
-import { WeatherSearch } from '../weather-details/weather-details';
+import { WeatherDetails } from '../weather-details/weather-details';
 
 @Component({
   selector: 'app-weather-wrapper',
-  imports: [WeatherError, WeatherForm, WeatherSearch],
+  imports: [WeatherError, WeatherForm, WeatherDetails],
   templateUrl: './weather-wrapper.html',
   styleUrl: './weather-wrapper.scss',
 })

@@ -4,12 +4,12 @@ import { getWeatherConditionKind } from '../../utils/weather-condition';
 import { WeatherConditionIcon } from '../weather-condition-icon/weather-condition-icon';
 
 @Component({
-  selector: 'app-weather-search',
+  selector: 'app-weather-details',
   imports: [WeatherConditionIcon],
-  templateUrl: './weather-search.html',
-  styleUrl: './weather-search.scss',
+  templateUrl: './weather-details.html',
+  styleUrl: './weather-details.scss',
 })
-export class WeatherSearch {
+export class WeatherDetails {
   readonly weather = input<CurrentWeather | null>(null);
 
   readonly resultClass = computed(() => {
